@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title></title>
 </head>
 <body>
+
+<div class="kkk" yyy="Hey" style="float:left;background: #000;width:50px;height:50px;">
+
+</div>
+<div yyy="Hey" style="float:left;background: #000;width:50px;height:50px;"></div>
+    <div class="kkk"  yyy="Hey" style="float:left;background: #000;width:50px;height:50px;"></div>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+
+    $(".kkk").click(function(){
+        $(this).css("background","green");
+        $(this).css("width","100px");
+        $(this).fadeOut("slow");
+        //alert("Hello World");
+    });
+
+    //# id
+    //. class
+    //
+
+</script>
+
 
 </body>
 </html>
