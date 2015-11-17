@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聊天室</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<div id="Lmain" class="chat1">
+</div>
+<div id="Rmain" class="chat2">
+    <div id="online">
+        <label>在线人数：</label>
+    </div>
+    <div style="height: 96%; background: cornflowerblue">
+        <input id="txtarea" type="textarea" readonly>
+    </div>
+</div>
+<div id="DRmain" class="chat1" style="height: 80px">
+    <textarea id="txt" type="textarea"></textarea>
+    <button id="send">发送</button>
+</div>
+<script>
+    $('document').ready(function(){
+        $("button").click(function(){
+            $.post("core.php",{cmd:"msg",text:$('#txt')[0].value},function(data){
+                $("#Lmain").html(data);
+
+                // alert(data);
+            })
+        })
+    })
+</script>
+</body>
+</html>
