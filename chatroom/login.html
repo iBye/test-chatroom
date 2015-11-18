@@ -1,0 +1,41 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到Alien聊天室</title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+</head>
+
+<body  style="text-align: center">
+<div>
+<forn id="form" name="form" method="POST" >
+    <label>昵称：</label>
+    <input id="usename" type="text"
+           name="nikename"
+            value="请输入你的昵称"
+           onblur="if(this.value==''){this.value='请输入你的昵称'}"
+           onfocus="if(this.value=='请输入你的昵称'){this.value='';this.style.color='#737e73'}"
+            >
+    <input id="check" type="button" value="确定">
+</forn>
+</div>
+<div id="checknike"></div>
+<script>
+    $(document).ready(function() {
+        $("#usename").keyup(function(){
+            $("#checknike").load("check.php",{nkn:$("#usename").val()});
+        });
+        $("#check").click(function(){
+            if($("#checknike").html()=="该昵称可以使用"){
+                $.post("online.php",{},function(){
+                    window.location.href="index.html";
+                })
+            }
+            else{
+                alert("请输入正确的昵称");
+            }
+        });
+    });
+</script>
+</body>
+</html>

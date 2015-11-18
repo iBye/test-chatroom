@@ -10,7 +10,7 @@
     border: 1px solid;
 }
 #Rmain{height: 480px;}
-#Lmain{height: 480px;}
+#Lmain{height: 480px;overflow:auto;}
 #txt{
     margin: 2px;
     float: left;
@@ -23,6 +23,15 @@
     width: 100px;
     height: 60px;
 }
+
+#exit{
+    margin-left: 30px;
+    margin-top: 10px;
+    float: left;
+    width: 100px;
+    height: 60px;
+}
+
 #txtarea{
     height: 98%;
     width: 96%;
